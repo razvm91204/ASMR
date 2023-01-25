@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/slider.css" />
+    <link rel="canonical" href="https://razvm91204.github.io/asmr-pwa/" />
+    <link rel="manifest" href="/asmr-pwa/manifest.webmanifest">
+    <script src="sounds.js" defer></script>
+    <title>ASMR Sounds</title>
+</head>
+
+<body>
+    <div id="save-container">
+        <span id="sound-title">Not saved</span>
+        <div id="save-buttons">
+            <button id="play-btn">
+                <img id="play-img" src="icons/play.svg" height="20" width="20">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5"><path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd"></path></svg> -->
+            </button>
+            <button id="star-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R19imi:" data-state="closed"><path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd"></path></svg>
+            </button>
+            <button id="heart-btn">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R1pimi:" data-state="closed"><path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="modal" class="modal">
+        <span>Add To Favorites</span>
+        <label for="name">Name<input type="text" name="name" id="preset-name" placeholder="e.g. Rainy night">
+        </label>
+        <div id="save-preset">
+            <button id="save-btn">Save Preset</button>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <span>Favorites</span>
+        <div id="presets">
+
+        </div>
+    </div>
+    <div id="sounds-container">
+        <div class="sound inactive">
+            <img class="icon" id="bird" width="60" height="60" src="icons/bird.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='bird-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/birds.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="boat" width="60" height="60" src="icons/boat.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='boat-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/boat.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="city" width="60" height="60" src="icons/city.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='city-volume' min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/city.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="coffee-shop" width="60" height="60" src="icons/coffee-shop.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='coffee-shop-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/coffee-shop.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="fireplace" width="60" height="60" src="icons/fireplace.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='fireplace-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/fireplace.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="pink-noise" width="60" height="60" src="icons/pink-noise.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='pink-noise-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/pink-noise.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="rain" width="60" height="60" src="icons/rain.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='rain-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/rain.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="storm" width="60" height="60" src="icons/storm.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='storm-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/storm.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="summer-night" width="60" height="60" src="icons/summer-night.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='summer-night-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/summer-night.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="waves" width="60" height="60" src="icons/waves.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='waves-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/waves.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="white-noise" width="60" height="60" src="icons/white-noise.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='white-noise-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/white-noise.ogg"></audio>
+            </div>
+        </div>
+        <div class="sound inactive">
+            <img class="icon" id="wind" width="60" height="60" src="icons/wind.svg">
+            <div class="range">
+                <div class="field">
+                    <input type="range" id='wind-volume'min="0" max="100" value="100" steps="1" />
+                </div>
+                <audio class="audio" src="./sounds/wind.ogg"></audio>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

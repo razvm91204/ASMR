@@ -1,0 +1,22 @@
+{
+  "name": "asmr-sounds",
+  "version": "1.0.0",
+  "description": "Soothing sounds for studying, relaxing and sleeping",
+  "main": "main.js",
+  "author": "raz",
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "icon": "build/icon.png"
+  },
+  "devDependencies": {
+    "electron-builder": "^23.6.0",
+    "electron": "^22.0.3"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack":"electron-builder --dir"
+  }
+}
