@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/slider.css" />
-    <link rel="canonical" href="https://razvm91204.github.io/ASMR/" />
-    <link rel="manifest" href="/ASMR/manifest.webmanifest">
+    <link rel="icon" href="styles/slider.css" />
+    <link rel="shortcut icon" href="build/icon.png" type="image/x-icon">
+    <!-- <link rel="canonical" href="https://razvm91204.github.io/ASMR/" /> -->
+    <link rel="manifest" href="manifest.webmanifest">
     <script src="main.js" defer></script>
     <title>ASMR Sounds</title>
 </head>
@@ -156,10 +158,7 @@
     </div>
     <script>
         if (navigator.serviceWorker) {
-          navigator.serviceWorker.register (
-            '/ASMR/sw.js',
-            {scope: '/ASMR/sw.js'}
-          )
+          navigator.serviceWorker.register ('ASMR/sw.js', {scope: "/"})
         }
     </script>
 </body>

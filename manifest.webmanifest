@@ -3,14 +3,14 @@
     "name": "Soothe",
     "short_name": "Soothe",
     "description": "Soothing sounds for studying, relaxing and sleeping",
-    "scope": "/ASMR/",
     "start_url": "/ASMR/",
+    "scope": "/ASMR/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
     "display": "standalone", 
     "icons": [
         {
-          "src": "/ASMR/build/icon.png",
+          "src": "/build/icon.png",
           "type": "image/png",
           "sizes": "256x256"
         }
