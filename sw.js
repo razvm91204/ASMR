@@ -37,7 +37,7 @@ const precacheResources = [
     `${GHPATH}/icons/waves.svg`,
     `${GHPATH}/icons/white-noise.svg`,
     `${GHPATH}/icons/wind.svg`,
-    `${GHPATH}/sounds.js`
+    `${GHPATH}/main.js`
   ];
 
 // When the service worker is installing, open the cache and add the precache resources to it
