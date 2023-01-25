@@ -11,13 +11,18 @@
     font-weight: 700;
 }
 
+:root{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-tap-highlight-color: transparent;
+}
+
 body{
     background-color:hsl(228, 10%, 25%);
     display:flex;
     flex-direction: column;
     place-content: center;
     min-width:300px;
-    overflow:hidden;
+    overflow-x:hidden;
     font-family:Avenir;
     font-weight:400;
     place-items: center;
@@ -35,12 +40,14 @@ body{
     font-family:"Avenir";
     place-content:space-between;
     place-items:center;
-    width:95%;
+    width:100vw;
     color:white;
 }
 
 #save-buttons{
     display:flex;
+    margin-right:10px;
+
     align-items:center;
     justify-content:center;
 }
@@ -84,7 +91,6 @@ button svg{
 }
 
 #play-btn:hover img{
-    /* color:rgb(255, 184, 90); */
     filter:invert(1) brightness(0.5) sepia(100) saturate(5) hue-rotate(-10deg) brightness(1.4);
     transition:0.2s;
 }
@@ -104,11 +110,20 @@ button svg{
     border:none;
 }
 
+
+
+#sound-title{
+    margin-left:20px;
+}
+
 #sounds-container{
     margin-top:20px;
     user-select:none;
+    gap:5px;
+    width:30%;
+    max-width:350px;
     display:grid;
-    grid-template-columns: repeat(4, 120px);
+    grid-template-columns: repeat(auto-fill, 80px);
     grid-template-rows: repeat(4, 120px);
     place-content: center;
     place-items:center;
@@ -141,6 +156,7 @@ button svg{
 }
 
 .sound{
+    width:30px;
     display:flex;
     place-items:center;
     place-content:center;
