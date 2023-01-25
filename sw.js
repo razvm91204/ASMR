@@ -1,7 +1,8 @@
 // Change this to your repository name
 var GHPATH = '/ASMR';
 // Choose a cache name
-const cacheName = 'cache-v1';
+const CACHE_NAME = 'cache-v1';
+const  APP_PREFIX = 'soothe_';
 // List the files to precache
 const precacheResources = [    
     `${GHPATH}/`,
@@ -28,25 +29,44 @@ const precacheResources = [
     `${GHPATH}/main.js`
   ];
 
-// When the service worker is installing, open the cache and add the precache resources to it
-self.addEventListener('install', (event) => {
-  console.log('Service worker install event!');
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
-});
 
-self.addEventListener('activate', (event) => {
-  console.log('Service worker activate event!');
-});
-
-// When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
-self.addEventListener('fetch', (event) => {
-  console.log('Fetch intercepted for:', event.request.url);
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request);
-    }),
-  );
-});
+  self.addEventListener('fetch', function (e) {
+    console.log('Fetch request : ' + e.request.url);
+    e.respondWith(
+      caches.match(e.request).then(function (request) {
+        if (request) { 
+          console.log('Responding with cache : ' + e.request.url);
+          return request
+        } else {       
+          console.log('File is not cached, fetching : ' + e.request.url);
+          return fetch(e.request)
+        }
+      })
+    )
+  })
+  
+  self.addEventListener('install', function (e) {
+    e.waitUntil(
+      caches.open(CACHE_NAME).then(function (cache) {
+        console.log('Installing cache : ' + CACHE_NAME);
+        return cache.addAll(URLS)
+      })
+    )
+  })
+  
+  self.addEventListener('activate', function (e) {
+    e.waitUntil(
+      caches.keys().then(function (keyList) {
+        var cacheWhitelist = keyList.filter(function (key) {
+          return key.indexOf(APP_PREFIX)
+        })
+        cacheWhitelist.push(CACHE_NAME);
+        return Promise.all(keyList.map(function (key, i) {
+          if (cacheWhitelist.indexOf(key) === -1) {
+            console.log('Deleting cache : ' + keyList[i] );
+            return caches.delete(keyList[i])
+          }
+        }))
+      })
+    )
+  })
