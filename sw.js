@@ -20,7 +20,7 @@ const precacheResources = [
     `${GHPATH}/index.html`,
     `${GHPATH}/fonts/Avenir.ttf`,
     `${GHPATH}/fonts/Avenir-Heavy.ttf`,
-    `${GHPATH}/styles/styles.css`,
+    `${GHPATH}/styles/style.css`,
     `${GHPATH}/styles/slider.css`,
     `${GHPATH}/icons/bird.svg`,
     `${GHPATH}/icons/boat.svg`,
