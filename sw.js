@@ -12,35 +12,35 @@ var VERSION = 'version_00';
 
 // The files to make available for offline use. make sure to add 
 // others to this list
-var URLS = [    
-  `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/fonts/Avenir.ttf`,
-  `${GHPATH}/fonts/Avenir-Heavy.ttf`,
-  `${GHPATH}/styles/styles.css`,
-  `${GHPATH}/styles/slider.css`,
-  `${GHPATH}/icons/bird.svg`,
-  `${GHPATH}/icons/boat.svg`,
-  `${GHPATH}/icons/city.svg`,
-  `${GHPATH}/icons/coffee-shop.svg`,
-  `${GHPATH}/icons/fireplace.svg`,
-  `${GHPATH}/icons/pause.svg`,
-  `${GHPATH}/icons/pink-noise.svg`,
-  `${GHPATH}/icons/play.svg`,
-  `${GHPATH}/icons/rain.svg`,
-  `${GHPATH}/icons/storm.svg`,
-  `${GHPATH}/icons/summer-night.svg`,
-  `${GHPATH}/icons/trash.svg`,
-  `${GHPATH}/icons/waves.svg`,
-  `${GHPATH}/icons/white-noise.svg`,
-  `${GHPATH}/icons/wind.svg`,
-  `${GHPATH}/sounds.js`
-]
+// var URLS = [    
+//   `${GHPATH}/`,
+//   `${GHPATH}/index.html`,
+//   `${GHPATH}/fonts/Avenir.ttf`,
+//   `${GHPATH}/fonts/Avenir-Heavy.ttf`,
+//   `${GHPATH}/styles/styles.css`,
+//   `${GHPATH}/styles/slider.css`,
+//   `${GHPATH}/icons/bird.svg`,
+//   `${GHPATH}/icons/boat.svg`,
+//   `${GHPATH}/icons/city.svg`,
+//   `${GHPATH}/icons/coffee-shop.svg`,
+//   `${GHPATH}/icons/fireplace.svg`,
+//   `${GHPATH}/icons/pause.svg`,
+//   `${GHPATH}/icons/pink-noise.svg`,
+//   `${GHPATH}/icons/play.svg`,
+//   `${GHPATH}/icons/rain.svg`,
+//   `${GHPATH}/icons/storm.svg`,
+//   `${GHPATH}/icons/summer-night.svg`,
+//   `${GHPATH}/icons/trash.svg`,
+//   `${GHPATH}/icons/waves.svg`,
+//   `${GHPATH}/icons/white-noise.svg`,
+//   `${GHPATH}/icons/wind.svg`,
+//   `${GHPATH}/sounds.js`
+// ]
 
 // Choose a cache name
 const cacheName = 'cache-v1';
 // List the files to precache
-const precacheResources = ['/', '/index.html', '/css/style.css', '/js/main.js', '/js/app/editor.js', '/js/lib/actions.js'];
+const precacheResources = URLS;
 
 // When the service worker is installing, open the cache and add the precache resources to it
 self.addEventListener('install', (event) => {
