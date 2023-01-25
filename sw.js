@@ -4,7 +4,7 @@ var GHPATH = '/ASMR';
 const CACHE_NAME = 'cache-v1';
 const  APP_PREFIX = 'soothe_';
 // List the files to precache
-const precacheResources = [    
+const URLS = [    
     `${GHPATH}/`,
     `${GHPATH}/index.html`,
     `${GHPATH}/fonts/Avenir.ttf`,
